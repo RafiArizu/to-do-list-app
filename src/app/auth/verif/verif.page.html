@@ -1,0 +1,57 @@
+<ion-content [fullscreen]="true" class="verif-content">
+
+  <div class="verif-wrapper">
+
+    <!-- Brand Header -->
+    <div class="brand-header">
+      <ion-icon name="checkmark-circle-outline" class="brand-icon"></ion-icon>
+      <span class="brand-name">Daily TaskMaster</span>
+    </div>
+
+    <!-- Card -->
+    <div class="verif-card">
+
+      <!-- Illustration -->
+      <div class="illustration-section">
+        <div class="illustration-circle">
+          <ion-icon name="mail-unread-outline" class="mail-icon"></ion-icon>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="text-section">
+        <h1 class="card-title">Confirm your identity</h1>
+        <p class="card-subtitle">
+          We've sent a secure verification link to your inbox. Please check your
+          email to continue setting up your workspace.
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-section">
+
+        <ion-button expand="block" class="btn-check" (click)="checkStatus()">
+          Check Status
+        </ion-button>
+
+        <ion-button expand="block" class="btn-resend" (click)="resendEmail()">
+          <ion-icon name="refresh-circle-outline" class="resend-icon" slot="start"></ion-icon>
+          Resend Email
+        </ion-button>
+
+      </div>
+
+      <!-- Divider -->
+      <div class="card-divider"></div>
+
+      <!-- Help -->
+      <div class="help-section">
+        <span class="help-label">NEED HELP?</span>
+        <span class="help-link" (click)="contactSupport()">Contact Support</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

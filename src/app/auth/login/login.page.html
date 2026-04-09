@@ -1,0 +1,96 @@
+<ion-content [fullscreen]="true" class="login-content">
+
+  <div class="login-wrapper">
+
+    <!-- Logo & Brand -->
+    <div class="brand-section">
+      <div class="brand-logo">
+        <ion-icon name="checkmark-circle" class="logo-icon"></ion-icon>
+      </div>
+      <h1 class="brand-title">Daily<br />TaskMaster</h1>
+      <p class="brand-subtitle">Refined productivity for the editorial mind.</p>
+    </div>
+
+    <!-- Card: Form + Buttons + Footer -->
+    <div class="form-card">
+
+      <!-- Form Section -->
+      <div class="form-section">
+
+        <!-- Email Address -->
+        <div class="input-group">
+          <label class="input-label">EMAIL ADDRESS</label>
+          <div class="input-wrapper">
+            <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+            <input
+              type="email"
+              class="custom-input"
+              placeholder="name@example.com"
+              [(ngModel)]="email"
+            />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+          <div class="label-row">
+            <label class="input-label">PASSWORD</label>
+            <span class="forgot-link" (click)="goForgot()">Forgot?</span>
+          </div>
+          <div class="input-wrapper">
+            <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+            <input
+              type="password"
+              class="custom-input"
+              placeholder="••••••••"
+              [(ngModel)]="password"
+            />
+          </div>
+        </div>
+
+        
+        <div class="error-alert" *ngIf="showError">
+          <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+          <span class="error-text">Invalid credentials. Please verify your details and try again.</span>
+        </div>
+
+      </div>
+
+      <!-- Sign In Button -->
+      <ion-button expand="block" class="btn-signin" (click)="goLogin()">
+        Sign In
+        <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+      </ion-button>
+
+      <!-- Divider -->
+      <div class="divider-section">
+        <span class="divider-text">OR CONTINUE WITH</span>
+      </div>
+
+      <!-- Google Button -->
+      <ion-button expand="block" class="btn-google" (click)="goGoogleLogin()">
+        <ion-icon name="logo-google" class="google-icon"></ion-icon>
+        Google
+      </ion-button>
+
+      <!-- Register Link -->
+      <div class="register-link">
+        <span class="register-text">New to Taskmaster?</span>
+        <span class="register-anchor" (click)="goRegister()">Create an account</span>
+      </div>
+
+    </div>
+    <!-- end .form-card -->
+
+    <!-- Footer Links -->
+    <div class="footer-links">
+      <span class="footer-link">PRIVACY</span>
+      <span class="footer-dot">·</span>
+      <span class="footer-link">TERMS</span>
+      <span class="footer-dot">·</span>
+      <span class="footer-link">SUPPORT</span>
+    </div>
+
+  </div>
+
+</ion-content>

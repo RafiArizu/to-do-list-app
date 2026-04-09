@@ -1,0 +1,255 @@
+// =============================================
+// REGISTER PAGE - Daily TaskMaster
+// =============================================
+
+// --- Variables ---
+$primary-blue:    #2563EB;
+$background:      #EEF2FF;
+$text-dark:       #0F172A;
+$text-muted:      #64748B;
+$border-color:    #E2E8F0;
+$input-bg:        #F8FAFF;
+$label-color:     #64748B;
+$card-bg:         #FFFFFF;
+$border-radius-input: 12px;
+$border-radius-card:  20px;
+
+// --- Content Background ---
+ion-content.register-content {
+  --background: #{$background};
+}
+
+// --- Wrapper ---
+.register-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 20px 40px;
+  background: $background;
+}
+
+// --- Brand Header ---
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+    background: $primary-blue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo-icon {
+      color: #FFFFFF;
+      font-size: 20px;
+    }
+  }
+
+  .brand-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: $primary-blue;
+    letter-spacing: -0.2px;
+  }
+}
+
+// --- Title Section ---
+.title-section {
+  margin-bottom: 24px;
+
+  .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: $text-dark;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    color: $text-muted;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+}
+
+// --- Form Card ---
+.form-card {
+  background: $card-bg;
+  border-radius: $border-radius-card;
+  padding: 24px 20px 20px;
+  box-shadow: 0px 4px 24px rgba(37, 99, 235, 0.08),
+              0px 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+// --- Form Section ---
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+// --- Input Group ---
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .input-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: $label-color;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    background: $input-bg;
+    border: 1.5px solid $border-color;
+    border-radius: $border-radius-input;
+    padding: 13px 16px;
+    gap: 12px;
+    transition: border-color 0.2s ease;
+
+    &:focus-within {
+      border-color: $primary-blue;
+      background: #FFFFFF;
+    }
+
+    .input-icon {
+      font-size: 18px;
+      color: #94A3B8;
+      flex-shrink: 0;
+    }
+
+    .custom-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 15px;
+      color: $text-dark;
+      font-family: inherit;
+
+      &::placeholder {
+        color: #CBD5E1;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .input-hint {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 2px;
+
+    .hint-icon {
+      font-size: 14px;
+      color: $primary-blue;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .hint-text {
+      font-size: 12px;
+      color: $text-muted;
+      line-height: 1.5;
+    }
+  }
+}
+
+// --- Create Account Button ---
+ion-button.btn-create-account {
+  --background: #{$primary-blue};
+  --background-hover: #1D4ED8;
+  --background-activated: #1D4ED8;
+  --border-radius: 12px;
+  --box-shadow: 0px 4px 16px rgba(37, 99, 235, 0.35);
+  --color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  height: 50px;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+// --- Divider ---
+.divider-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $border-color;
+  }
+
+  .divider-text {
+    font-size: 11px;
+    font-weight: 500;
+    color: $text-muted;
+    letter-spacing: 0.8px;
+    padding: 0 12px;
+    text-transform: uppercase;
+  }
+}
+
+// --- Google Button ---
+ion-button.btn-google {
+  --background: #FFFFFF;
+  --background-hover: #F8FAFC;
+  --background-activated: #F1F5F9;
+  --border-radius: 12px;
+  --box-shadow: none;
+  --color: #{$text-dark};
+  border: 1.5px solid $border-color;
+  font-size: 15px;
+  font-weight: 500;
+  height: 48px;
+  margin: 0 0 20px 0;
+
+  .google-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #2359d8;
+  }
+}
+
+// --- Sign In Link ---
+.signin-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  .signin-text {
+    font-size: 14px;
+    color: $text-muted;
+    font-weight: 400;
+  }
+
+  .signin-anchor {
+    font-size: 14px;
+    color: $primary-blue;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

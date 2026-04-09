@@ -1,0 +1,181 @@
+// =============================================
+// VERIF PAGE - Daily TaskMaster
+// =============================================
+
+// --- Variables ---
+$primary-blue:       #2563EB;
+$background:         #EEF2FF;
+$card-bg:            #FFFFFF;
+$text-dark:          #0F172A;
+$text-muted:         #64748B;
+$border-color:       #E2E8F0;
+$resend-bg:          #EEF2FF;
+$border-radius-card: 20px;
+
+// --- Content ---
+ion-content.verif-content {
+  --background: #{$background};
+}
+
+// --- Wrapper ---
+.verif-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 20px 40px;
+  background: $background;
+  min-height: 100%;
+}
+
+// --- Brand Header ---
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+
+  .brand-icon {
+    font-size: 20px;
+    color: $primary-blue;
+  }
+
+  .brand-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: $primary-blue;
+    letter-spacing: -0.2px;
+  }
+}
+
+// --- Card ---
+.verif-card {
+  background: $card-bg;
+  border-radius: $border-radius-card;
+  padding: 32px 24px 28px;
+  box-shadow: 0px 4px 24px rgba(37, 99, 235, 0.08),
+              0px 1px 4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// --- Illustration ---
+.illustration-section {
+  margin-bottom: 24px;
+
+  .illustration-circle {
+    width: 96px;
+    height: 96px;
+    background: radial-gradient(circle at 40% 40%, #ffffff 0%, #f3f4f6 70%, #838383 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+    0px 4px 20px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 2px rgba(139, 139, 139, 0.6);
+
+    .mail-icon {
+      font-size: 44px;
+      color: #60A5FA;
+    }
+  }
+}
+
+// --- Text Section ---
+.text-section {
+  text-align: center;
+  margin-bottom: 28px;
+
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: $text-dark;
+    margin: 0 0 12px 0;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+    color: $text-muted;
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 260px;
+  }
+}
+
+// --- Buttons ---
+.btn-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+
+  ion-button.btn-check {
+    --background: #{$primary-blue};
+    --background-hover: #1D4ED8;
+    --background-activated: #1D4ED8;
+    --border-radius: 12px;
+    --box-shadow: 0px 4px 16px rgba(37, 99, 235, 0.35);
+    --color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    height: 52px;
+    margin: 0;
+  }
+
+  ion-button.btn-resend {
+    --background: #{$resend-bg};
+    --background-hover: #E0E7FF;
+    --background-activated: #E0E7FF;
+    --border-radius: 12px;
+    --box-shadow: none;
+    --color: #{$primary-blue};
+    font-size: 15px;
+    font-weight: 500;
+    height: 52px;
+    margin: 0;
+
+    .resend-icon {
+      font-size: 18px;
+      margin-right: 6px;
+    }
+  }
+}
+
+// --- Divider ---
+.card-divider {
+  width: 100%;
+  height: 1px;
+  background: $border-color;
+  margin-bottom: 20px;
+}
+
+// --- Help Section ---
+.help-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  .help-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: $text-muted;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .help-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary-blue;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
