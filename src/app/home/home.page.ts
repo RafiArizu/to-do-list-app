@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DatabaseService } from '../services/database.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+
+  constructor(private dbService: DatabaseService) {}
+
+    async ngOnInit() {
+      await this.dbService.insertUserTest();
+      await this.dbService.getUsers();
+    }
+
+
+
+  
 
 }

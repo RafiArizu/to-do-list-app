@@ -6,22 +6,36 @@ import { DatabaseService } from './services/database.service';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  standalone: false,
+  standalone: false
 })
 export class AppComponent {
-
   constructor(
     private platform: Platform,
     private dbService: DatabaseService
   ) {
-    this.init();
+    this.startApp();
   }
 
-  async init() {
+  async startApp(): Promise<void> {
+    // platform.ready() memastikan Capacitor bridge sudah siap
     await this.platform.ready();
-    await this.dbService.initDB();
-    await this.dbService.checkTables();
+    console.log('[MYAPP] APP START — platform ready');
 
-    console.log('Database siap');
+    try {
+      await this.dbService.initDB();
+      console.log('[MYAPP] DB INIT OK');
+
+      await this.dbService.insertUserTest();
+      console.log('[MYAPP] INSERT OK');
+
+      await this.dbService.getUsers();
+      console.log('[MYAPP] GET USERS OK');
+
+    } catch (err: any) {
+      // Tampilkan error detail — ini kunci debugging
+      console.error('[MYAPP] ERROR MESSAGE:', err?.message);
+      console.error('[MYAPP] ERROR STACK:', err?.stack);
+      console.error('[MYAPP] ERROR FULL:', JSON.stringify(err));
+    }
   }
 }
